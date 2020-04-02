@@ -39,12 +39,12 @@ public class MinBinaryHeap <V, P extends Comparable<P>> implements BinaryHeap<V,
     	
     	int position = aList.size() - 1;
     	
-    	int pos2 = (position - 1) / 2;
+    	//int pos2 = (position - 1) / 2;
     	while (position > 0) {
-    		if (aList.get(position).getPriority().compareTo(aList.get(pos2).getPriority()) < 0) {
+    		if (aList.get(position).getPriority().compareTo(aList.get((position - 1) / 2).getPriority()) < 0) {
     			Prioritized<V,P> temp = aList.get(position);
-    			aList.set(position, aList.get(pos2));
-    			aList.set(pos2, temp);
+    			aList.set(position, aList.get((position - 1) / 2));
+    			aList.set((position - 1) / 2, temp);
     			position = (position - 1) / 2;
     		} else {
     			return;
