@@ -49,8 +49,8 @@ public class MinBinaryHeap <V, P extends Comparable<P>> implements BinaryHeap<V,
     		} else {
     			return;
     		}
-    		return;
     	}
+    	return;
     	
     }
 
