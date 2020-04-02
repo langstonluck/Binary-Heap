@@ -28,7 +28,12 @@ public class MinBinaryHeap <V, P extends Comparable<P>> implements BinaryHeap<V,
 
     @Override
     public int size() {
-    	return 0;
+    	try {
+    		aList.size();
+    	} catch (IndexOutOfBoundsException e) {
+    		return 0;
+    	}
+    	return aList.size();
     }
 
     @Override
