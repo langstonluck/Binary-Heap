@@ -21,7 +21,6 @@ public class MinBinaryHeap <V, P extends Comparable<P>> implements BinaryHeap<V,
     public MinBinaryHeap(Prioritized<V,P> initialEntries[]) {
     	// Your code here.
     	aList = new ArrayList<Prioritized<V,P>>();
-    	
     	for (int i = 0; i < initialEntries.length; i++) {
     		aList.add(initialEntries[i]);
     	}
@@ -46,7 +45,7 @@ public class MinBinaryHeap <V, P extends Comparable<P>> implements BinaryHeap<V,
     			Prioritized<V,P> temp = aList.get(position);
     			aList.set(position, aList.get(pos2));
     			aList.set(pos2, temp);
-    			position = pos2;
+    			position = (position - 1) / 2;
     		} else {
     			return;
     		}
