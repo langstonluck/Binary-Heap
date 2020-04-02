@@ -28,7 +28,7 @@ public class MinBinaryHeap <V, P extends Comparable<P>> implements BinaryHeap<V,
 
     @Override
     public int size() {
-    	return aList.size();
+    	return aList.size()-1;
     }
 
     @Override
@@ -69,9 +69,6 @@ public class MinBinaryHeap <V, P extends Comparable<P>> implements BinaryHeap<V,
     		if (right > aList.size()) {
     			smaller = left;
     		} else {
-    			if (left > aList.size()-1 || right > aList.size()-1 || position > aList.size()-1) {
-    				throw new IndexOutOfBoundsException("Out of bounds");
-    			}
     			if (aList.get(left).getPriority().compareTo(aList.get(right).getPriority()) < 0) {
     				smaller = left;
     			} else {
